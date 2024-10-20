@@ -1,6 +1,7 @@
 package spring.spring_basic_study.service;
 
 import spring.spring_basic_study.domain.Member;
+import spring.spring_basic_study.repository.MemberRepositoy;
 import spring.spring_basic_study.repository.MemoryMemberRepository;
 
 import java.util.List;
@@ -8,7 +9,12 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final MemoryMemberRepository memoryMemberRepository = new MemoryMemberRepository();
+    private final MemoryMemberRepository memoryMemberRepository;
+
+    public MemberService(MemoryMemberRepository memoryMemberRepository) {
+        // DI 외부에서 객체를 생성해서 직접 주입
+        this.memoryMemberRepository = memoryMemberRepository;
+    }
 
     /**
      * 회원 가입
