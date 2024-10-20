@@ -1,5 +1,7 @@
 package spring.spring_basic_study.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import spring.spring_basic_study.domain.Member;
 import spring.spring_basic_study.repository.MemberRepositoy;
 import spring.spring_basic_study.repository.MemoryMemberRepository;
@@ -7,10 +9,12 @@ import spring.spring_basic_study.repository.MemoryMemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
 
     private final MemoryMemberRepository memoryMemberRepository;
 
+    @Autowired
     public MemberService(MemoryMemberRepository memoryMemberRepository) {
         // DI 외부에서 객체를 생성해서 직접 주입
         this.memoryMemberRepository = memoryMemberRepository;
