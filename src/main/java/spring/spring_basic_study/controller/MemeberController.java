@@ -9,6 +9,9 @@ public class MemeberController {
 
     private final MemberService memberService;
 
+    // 필드 주입방식 , setter 주입방식 ( 권장 x )
+    // @Autowired private MemberService memberService;
+
     @Autowired
     public MemeberController(MemberService memberService) {
         // DI
