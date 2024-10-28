@@ -1,5 +1,6 @@
 package spring.spring_basic_study.service;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import spring.spring_basic_study.domain.Member;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Transactional
 public class MemberService {
 
     private final MemoryMemberRepository memoryMemberRepository;
